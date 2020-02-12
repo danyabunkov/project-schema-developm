@@ -1,0 +1,19 @@
+{
+  "development": {
+    "host": "localhost",
+    "port": 27017,
+    "database": "horses"
+  },
+  "test": {
+    "host": "localhost",
+    "port": 27017,
+    "database": "testHorses"
+  },
+  "production": {
+    "username": "prodSecretUser",
+    "password": "nobodyKnows",
+    "host": "localhost",
+    "port": 27017,
+    "database": "horses"
+  }
+}
