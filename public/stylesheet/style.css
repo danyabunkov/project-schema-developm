@@ -1,3 +1,222 @@
 .navbar-nav{
     list-style: none;
 }
+.page-header {
+    margin-bottom:150px;
+}
+a {
+    text-decoration: none;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    min-width: 1200px;
+    
+    font-family: Roboto, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    color: #000000;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  
+  .container {
+    width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+  }
+  
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    clip: rect(0, 0, 0, 0);
+  }
+  
+  .main-header {
+    background-color: #eeeeee;
+    
+    /* Временно для демонстрации */
+    height: 50px;
+  }
+  
+  .slider {
+    position: relative;
+    background-color: #ffffff;
+  }
+ 
+  
+  .slider-controls {
+    position: absolute;
+    left: 50%;
+    bottom: 90px;
+    z-index: 100;
+    
+    width: 160px;
+    height: 18px;
+  
+    text-align: center;
+    font-size: 0;
+    transform: translateX(-50%);
+  }
+  
+  .slider-controls label {
+    position: relative;
+    
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    padding: 8px;
+    
+    border-radius: 50%;
+    cursor: pointer;
+    margin-right: 10px;
+  }
+  
+  .slider-controls label::after {
+    content: "";
+    
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    z-index: 1;
+    
+    width: 18px;
+    height: 18px;
+    
+    background: #ffffff;
+    
+    border-radius: 50%;
+    border-color: #fb565a;
+    
+  }
+  
+  .slider-list {
+    margin: 0;
+    padding: 0;
+    
+    list-style: none;
+  }
+  
+  .slider-item {
+    display: none;
+    padding: 50px 0px 170px 0;
+    padding-left: 70px;
+  }
+
+  .slider-title {
+    margin-bottom: 60px;
+  }
+  
+  .slider-item:nth-child(1) {
+    background-image: url("/image/orgcharts-1.png");
+    background-repeat: no-repeat;
+    background-position: 10% -80px;
+  }
+  
+  .slider-item:nth-child(2) {
+    background-image: url("/image/2020-02-13_16-54-05.png");
+    background-repeat: no-repeat;
+    background-position: 10px -100px;
+  }
+  
+  .slider-item:nth-child(3) {
+    background-image: url("/image/Rappid (1).png");
+    background-repeat: no-repeat;
+    background-position: 100% 20px;
+  }
+  
+  #product-1:checked ~ .slider-list .slider-item:nth-child(1) {
+    display: block;
+  }
+  
+  #product-2:checked ~ .slider-list .slider-item:nth-child(2) {
+    display: block;
+  }
+  
+  #product-3:checked ~ .slider-list .slider-item:nth-child(3) {
+    display: block;
+  }
+  
+  #product-1:checked ~ .slider-controls .slider-controls-item--1::before,
+  #product-2:checked ~ .slider-controls .slider-controls-item--2::before,
+  #product-3:checked ~ .slider-controls .slider-controls-item--3::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 2;
+    width: 4px;
+    height: 4px;
+    margin: 6px;
+    background-color: inherit;
+    border: 2px solid #c1c1c1;
+    border-radius: 50%;
+  }
+  
+  .slider-item h3 {
+    max-width: 600px;
+    margin: 0;
+    margin-bottom: 27px;
+    font-size: 45px;
+    line-height: 55px;
+    font-weight: 500;
+  }
+
+  
+  .slider-item p {
+    max-width: 430px;
+    margin: 0;
+    margin-bottom: 38px;
+  }
+  
+  .button {
+    display: block;
+    width: 240px;
+    padding: 13px 0;
+    
+    font-size: 16px;
+    line-height: 18px;
+    color: #ffffff;
+    text-transform: uppercase;
+    text-align: center;
+    text-decoration: none;
+    
+    background-color: #fb565a;
+    border-radius: 3px;
+    border: none;
+  }
+  
+  .button:hover,
+  .button:focus {
+    background-color: #e74246;
+  }
+  
+  .button:active {
+    background-color: #d7373b;
+    color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 3px rgba(0, 0, 0, 0.1) inset;
+  }
+  .slider-item-button {
+    position: relative;
+    bottom: -100px;
+  }
+  .h3{
+    position: relative;
+    left: 380px;
+    text-align: right;
+    
+  }
+  .slider-loh {
+    padding-bottom: 320px;
+  }
+  .slider-item-bottoms {
+      padding-bottom: 400px;
+  }
+  
