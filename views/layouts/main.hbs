@@ -2,20 +2,59 @@
 <html lang="en">
 
 <head>
+  <script defer src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script defer src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <!-- Stylesheets -->
+  <link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Lobster+Two'>
+
   <script defer src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
-  <title>Project</title>
+
+  <!-- JavaScripts -->
+  <script defer src="js/application.js"></script>
 </head>
 
-<body class="">
-  <header class="hero horse-image flex flex-centered">
+<body>
+  <nav class="navbar navbar-dark bg-dark">
+    <div class="pos-f-t">
+      <div class="collapse" id="navbarToggleExternalContent">
+        <div class="bg-dark p-4">
+          <h5 class="text-white h4"><img src="" alt=""></h5>
+          <a id='resourses' href="/resourses">схемы </a>
+          <a id='about' href="/about">о нас </a>
+          <a id='support' href="/support">support </a>
+          <a id='price' href="/price">price </a>
+          <a id='contacts' href="/contacts">contacts </a>
 
-  </header>
 
-  <main role="main" class="row light">
-    <div class="container flex flex-column">
-      {{{body}}}
+          <span id='linksCatego' class="text-muted">
+          </span>
+        </div>
+      </div>
+      <nav class="navbar navbar-dark bg-dark">
+        <span class="text-muted">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent"
+            aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <strong class='text-warning'> Все категории</strong>
+        </span>
+      </nav>
     </div>
-  </main>
+  </nav>
+  <div class="container">
+  </div>
+
+  {{{body}}}
 </body>
 
 </html>
