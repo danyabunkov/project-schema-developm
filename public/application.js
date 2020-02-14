@@ -17,3 +17,6 @@
 //     // const horses = await get('/resourses');
 //     const articlesTemplate = Handlebars.compile(articlesHbs);
 //     document.body.innerHTML = articlesTemplate()
+
+
+// const data = document.getElementById("mySavedModel").value
