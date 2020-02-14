@@ -52,7 +52,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(flash());
 app.use('/', indexRouter);
 app.use('/resourses', resoursesRouter);
-app.use('/about', aboutRouter);
+app.use('/trial', aboutRouter);
 app.use('/support', supportRouter);
 app.use('/price', priceRouter);
 app.use('/contacts', contactsRouter);
