@@ -1,0 +1,27 @@
+<div id="sample">
+  <div style="width: 100%; display: flex; justify-content: space-between">
+    <div id="myPaletteDiv" style="width: 100px; margin-right: 2px; background-color: #282c34;"></div>
+    <div id="myDiagramDiv" style="flex-grow: 1; height: 750px; background-color: #282c34;"></div>
+  </div>
+  <button id="SaveButton" onclick="save()">Save</button>
+  <button onclick="load()">Load</button>
+  Diagram Model saved in JSON format:
+  <textarea id="mySavedModel" style="width:100%;height:300px">{ "class": "GraphLinksModel",
+  "linkFromPortIdProperty": "fromPort",
+  "linkToPortIdProperty": "toPort",
+  "nodeDataArray": [ 
+{"category":"Start", "text":"Start", "key":-1, "loc":"-630 -197"},
+{"text":"молоко 1000л", "key":-2, "loc":"-774 -77.01542800664902"},
+{"text":"сахар 500кг", "key":-3, "loc":"-499 -66.01542800664902"},
+{"text":"потери\nмолоко 40%\nсахар 20%", "key":-4, "loc":"-644 13"},
+{"text":"результат", "key":-5, "loc":"-621 151"}
+ ],
+  "linkDataArray": [ 
+{"from":-4, "to":-5, "fromPort":"B", "toPort":"T", "points":[-644,46.55710296630859,-644,56.55710296630859,-644,89.93570098876953,-621,89.93570098876953,-621,123.31429901123047,-621,133.31429901123047]},
+{"from":-2, "to":-4, "fromPort":"B", "toPort":"T", "points":[-774,-59.32972701787948,-774,-49.32972701787948,-774,-39.943414992094034,-644,-39.943414992094034,-644,-30.55710296630859,-644,-20.55710296630859]},
+{"from":-3, "to":-4, "fromPort":"B", "toPort":"T", "points":[-499,-48.32972701787948,-499,-38.32972701787948,-499,-34.443414992094034,-626.2822494506836,-34.443414992094034,-626.2822494506836,-30.55710296630859,-626.2822494506836,-20.55710296630859]},
+{"from":-1, "to":-2, "fromPort":"B", "toPort":"T", "points":[-630,-160.25,-630,-150.25,-630,-127.47556449770927,-774,-127.47556449770927,-774,-104.70112899541854,-774,-94.70112899541854]},
+{"from":-1, "to":-3, "fromPort":"B", "toPort":"T", "points":[-630,-160.25,-630,-150.25,-630,-121.97556449770927,-499,-121.97556449770927,-499,-93.70112899541854,-499,-83.70112899541854]}]}
+  </textarea>
+  <button onclick="printDiagram()">Print Diagram Using SVG</button>
+</div>
