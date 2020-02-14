@@ -380,22 +380,25 @@ function save() {
   // console.log(data.linkDataArray)
   let arrayRoutes = JSON.parse(data).linkDataArray;
   let arrayProduct = JSON.parse(data).nodeDataArray;
-  console.log('========>>>',arrayRoutes);
-    console.log('====>',arrayProduct);
-  let products=[];
+  console.log("========>>>", arrayRoutes);
+  console.log("====>", arrayProduct);
+  let products = [];
   arrayRoutes.forEach((element, index) => {
     if (element.from === -1) {
-     console.log(element.from)
       arrayProduct.forEach((el, ind) => {
-        if(el.key===element.to) {
-          let arr = el.text.split(' ');
-          let obj={};
-          products.push({`${one}`:second})
+        if (el.key === element.to) {
+          let arr = el.text.split(" ");
+          let obj = {
+            [arr[0]]: arr[1],
+            key:el.key,
+          };
+          products.push(obj);
         }
       });
     }
   });
-  console.log(products)
+  // arrayRoutes.forEach(())
+  console.log(products);
 }
 function load() {
   myDiagram.model = go.Model.fromJson(
