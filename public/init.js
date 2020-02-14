@@ -380,22 +380,84 @@ function save() {
   // console.log(data.linkDataArray)
   let arrayRoutes = JSON.parse(data).linkDataArray;
   let arrayProduct = JSON.parse(data).nodeDataArray;
-  console.log('========>>>',arrayRoutes);
-    console.log('====>',arrayProduct);
-  let products=[];
-  arrayRoutes.forEach((element, index) => {
-    if (element.from === -1) {
-     console.log(element.from)
-      arrayProduct.forEach((el, ind) => {
-        if(el.key===element.to) {
-          let arr = el.text.split(' ');
-          let obj={};
-          products.push({`${one}`:second})
+  const mapIndexes = {};
+  const mapFromTo = arrayRoutes.reduce((acc, x) => {
+    acc[x.from] = x.to;
+    // console.log(acc);
+    arrayProduct.forEach(element => {
+      if (x.from === element.key) {
+        mapIndexes[x.from] = element;
+      }
+    });
+    return acc;
+  }, {});
+  let next = mapIndexes[mapFromTo[-1]];
+  let map = new Map();
+  let map2 = new Map();
+  for (let [k, v] of Object.entries(mapIndexes)) {
+    if (v.text.includes("потери")) {
+      v.text.split("\n").forEach(el => {
+        if (el != "потери") {
+          let arr = el.split(" ");
+          map.set(arr[0], arr[1].slice(0, arr[1].length-1));
+          // obj[arr[0]] = arr[1].slice(0, arr[1].length);
         }
       });
+    } else {
+      let arr=v.text.split(' ');
+      if(arr.length > 1 ){
+        let numb=arr[1].match(/\d/g)
+        console.log(numb)
+        if(numb===null){
+          map2.set(arr[0],'0')
+          
+        } else {
+          map2.set(arr[0],numb.join(''))
+        }
+      }
     }
-  });
-  console.log(products)
+  }
+
+    // for (let [k, v] of Object.entries(mapIndexes)) {
+//     if(v.text='сгущенка'){
+//      const result =  100/map.get('молоко')
+//      const result0 =  100/map.get('сахар')
+// if(result>result0){
+//   map2.set('сгущенка', `${result0}`)
+//   map2.set('молоко',)
+//   map2.set('сахар',0)
+
+
+// } else {
+//   map2.set('сгущенка', `${result}`)
+//   map2.set('молоко',0)
+//   map2.set('сахар',)
+
+// }
+//     }
+
+//     }
+let str=[]
+   for (let k of map2){
+str.push(k[1])
+   }
+   alert(str.join('\n'))
+  //   for (let [k, v] of Object.entries(mapIndexes)) {
+  //     if(v.text='карамелька'){
+  //      const result =  map2.get('огонь')/(map2.get('огонь')*map.get('огонь')/100)
+  //      const result0 =  map2.get('сгущенка')/(map2.get('сгущенка')*map.get('сгущенка')/100)
+  // if(result>result0){
+  //   map2.set('карамелька', `${result0}`)
+  
+  // } else {
+  //   map2.set('карамелька', `${result}`)
+  // }
+  //     }
+  
+  //     }
+    
+    console.log(map2)
+  
 }
 function load() {
   myDiagram.model = go.Model.fromJson(
