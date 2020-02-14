@@ -8,7 +8,14 @@ const logger = require('morgan');
 const flash = require('connect-flash');
 
 const indexRouter = require('./routes/index');
-const horsesRouter = require('./routes/users');
+const resoursesRouter = require('./routes/resourses');
+const aboutRouter = require('./routes/about');
+const supportRouter = require('./routes/support');
+const priceRouter = require('./routes/price');
+const contactsRouter = require('./routes/contacts');
+
+
+
 
 const app = express();
 const hbs = exphbs.create({
@@ -44,7 +51,15 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(flash());
 app.use('/', indexRouter);
-app.use('/horses', horsesRouter);
+app.use('/resourses', resoursesRouter);
+app.use('/trial', aboutRouter);
+app.use('/support', supportRouter);
+app.use('/price', priceRouter);
+app.use('/contacts', contactsRouter);
+
+
+
+
 
 
 
